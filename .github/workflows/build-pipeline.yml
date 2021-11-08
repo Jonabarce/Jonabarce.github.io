@@ -31,6 +31,11 @@ jobs:
         run: npm ci
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
       jobs:
+      add-beans:
+  grind-beans:
+    needs: add-beans
+  brew-coffee:
+    needs: [add-beans, grind-beans]
   deploy:
     runs-on: ubuntu-latest
     steps:
