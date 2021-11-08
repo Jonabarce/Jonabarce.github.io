@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: PASSWORD
-        run: echo " HELLO ${{secrets.PASSWORD}} "
+        run: echo ${{secrets.PASSWORD}}
         env:
-          secrets.PASSWORD: 123
+          secrets.PASSWORD: ${{secrets.PASSWORD}}
   weekday_job:
     runs-on: ubuntu-latest
     steps:
